@@ -9,3 +9,4 @@ D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.cspr
 D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.exe
 D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.pdb
 D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.Form1.resources
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.Form2.resources
