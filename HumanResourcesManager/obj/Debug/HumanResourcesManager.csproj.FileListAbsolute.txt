@@ -1,0 +1,11 @@
+D:\Projects\SCE22_TDD\HumanResourcesManager\bin\Debug\HumanResourcesManager.exe.config
+D:\Projects\SCE22_TDD\HumanResourcesManager\bin\Debug\HumanResourcesManager.exe
+D:\Projects\SCE22_TDD\HumanResourcesManager\bin\Debug\HumanResourcesManager.pdb
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.csproj.AssemblyReference.cache
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.csproj.SuggestedBindingRedirects.cache
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.Properties.Resources.resources
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.csproj.GenerateResource.cache
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.csproj.CoreCompileInputs.cache
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.exe
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.pdb
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.Form1.resources
