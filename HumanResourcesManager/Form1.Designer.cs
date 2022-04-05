@@ -31,12 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WorkerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WorkerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.WorkerWage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WorkerSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
+            this.WorkerTax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WorkerNetSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.WorkerEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,10 +54,10 @@
             this.WorkerID.Text = "מספר זהות";
             this.WorkerID.Width = 143;
             // 
-            // WorkerWage
+            // WorkerSalary
             // 
-            this.WorkerWage.Text = "משכורת";
-            this.WorkerWage.Width = 162;
+            this.WorkerSalary.Text = "משכורת ברוטו";
+            this.WorkerSalary.Width = 137;
             // 
             // listView1
             // 
@@ -62,18 +66,31 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.WorkerName,
             this.WorkerID,
-            this.WorkerWage});
+            this.WorkerSalary,
+            this.WorkerTax,
+            this.WorkerNetSalary,
+            this.WorkerEmail});
             this.listView1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(37, 78);
+            this.listView1.Location = new System.Drawing.Point(12, 78);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(689, 307);
+            this.listView1.Size = new System.Drawing.Size(957, 307);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // WorkerTax
+            // 
+            this.WorkerTax.Text = "חישוב מס";
+            this.WorkerTax.Width = 99;
+            // 
+            // WorkerNetSalary
+            // 
+            this.WorkerNetSalary.Text = "משכורת נטו";
+            this.WorkerNetSalary.Width = 114;
             // 
             // toolStrip1
             // 
@@ -82,7 +99,7 @@
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(981, 27);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -111,13 +128,29 @@
             this.toolStripTextBox2.Text = "10,000 עובדים חדשים";
             this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 385);
+            this.progressBar1.Maximum = 1000;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(957, 26);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Visible = false;
+            // 
+            // WorkerEmail
+            // 
+            this.WorkerEmail.Text = "E-Mail";
+            this.WorkerEmail.Width = 76;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(981, 465);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.listView1);
             this.Name = "Form1";
@@ -134,12 +167,16 @@
         #endregion
         private System.Windows.Forms.ColumnHeader WorkerName;
         private System.Windows.Forms.ColumnHeader WorkerID;
-        private System.Windows.Forms.ColumnHeader WorkerWage;
+        private System.Windows.Forms.ColumnHeader WorkerSalary;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripTextBox2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ColumnHeader WorkerTax;
+        private System.Windows.Forms.ColumnHeader WorkerNetSalary;
+        private System.Windows.Forms.ColumnHeader WorkerEmail;
     }
 }
 

@@ -19,6 +19,9 @@ namespace HumanResourcesManager
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Worker worker = new Worker(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text);
+            Form1.workerList.Add(worker);
+            this.Close();
         }
     }
 }
