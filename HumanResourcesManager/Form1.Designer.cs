@@ -37,7 +37,11 @@
             this.monthFee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WorkerEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WorkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Workers10KToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorkerName
@@ -57,7 +61,8 @@
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -72,12 +77,12 @@
             this.listView1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(9, 115);
+            this.listView1.Location = new System.Drawing.Point(9, 30);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(829, 250);
+            this.listView1.Size = new System.Drawing.Size(666, 250);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -106,38 +111,69 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(9, 369);
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(9, 282);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar1.Maximum = 1000;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(829, 21);
+            this.progressBar1.Size = new System.Drawing.Size(667, 21);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 5;
             this.progressBar1.Visible = false;
             // 
-            // flowLayoutPanel1
+            // menuStrip1
             // 
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(850, 431);
-            this.flowLayoutPanel1.TabIndex = 6;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ToolStripMenuItem
+            // 
+            this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.WorkerToolStripMenuItem,
+            this.Workers10KToolStripMenuItem});
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.ToolStripMenuItem.Text = "הוסף";
+            // 
+            // WorkerToolStripMenuItem
+            // 
+            this.WorkerToolStripMenuItem.Name = "WorkerToolStripMenuItem";
+            this.WorkerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.WorkerToolStripMenuItem.Text = "עובד חדש";
+            this.WorkerToolStripMenuItem.Click += new System.EventHandler(this.WorkerToolStripMenuItem_Click);
+            // 
+            // Workers10KToolStripMenuItem
+            // 
+            this.Workers10KToolStripMenuItem.Name = "Workers10KToolStripMenuItem";
+            this.Workers10KToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.Workers10KToolStripMenuItem.Text = "10,000 עבדים חדשים";
+            this.Workers10KToolStripMenuItem.Click += new System.EventHandler(this.Workers10KToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 430);
+            this.ClientSize = new System.Drawing.Size(684, 345);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -151,7 +187,10 @@
         private System.Windows.Forms.ColumnHeader WorkerNetSalary;
         private System.Windows.Forms.ColumnHeader WorkerEmail;
         private System.Windows.Forms.ColumnHeader monthFee;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem WorkerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Workers10KToolStripMenuItem;
     }
 }
 

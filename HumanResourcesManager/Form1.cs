@@ -18,26 +18,6 @@ namespace HumanResourcesManager
         {
             InitializeComponent();
         }
-
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-            Form2 workerDialog = new Form2();
-            workerDialog.ShowDialog();
-            initializeTable();
-        }
-
-        private void toolStripTextBox2_Click(object sender, EventArgs e)
-        {
-            progressBar1.Show();
-            for(int i = 0; i < 10000; i++)
-            {
-                Worker worker = new Worker();
-                workerList.Add(worker);
-                progressBar1.PerformStep();
-            }
-            initializeTable();
-            progressBar1.Hide();
-        }
         
         private void initializeTable()
         {
@@ -58,6 +38,32 @@ namespace HumanResourcesManager
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void WorkerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 workerDialog = new Form2();
+            workerDialog.ShowDialog();
+            initializeTable();
+        }
+
+        private void Workers10KToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            progressBar1.Show();
+            for (int i = 0; i < 10000; i++)
+            {
+                Worker worker = new Worker();
+                workerList.Add(worker);
+                progressBar1.PerformStep();
+            }
+            initializeTable();
+            progressBar1.Hide();
         }
     }
 }

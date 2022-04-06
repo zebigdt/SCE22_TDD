@@ -89,7 +89,7 @@ namespace HumanResourcesManager
                 email += he_en(c.ToString());
             }
 
-            return email + "@wladodmoshe.co.il";
+            return email + "@ladodmoshe.co.il";
         }
         public static int tax(string salary)
         {
