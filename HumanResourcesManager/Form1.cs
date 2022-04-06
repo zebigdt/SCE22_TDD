@@ -18,52 +18,40 @@ namespace HumanResourcesManager
         {
             InitializeComponent();
         }
-        
-        private void initializeTable()
-        {
-            for(int i=0; i < workerList.Count; i++)
-            {
-                ListViewItem item = new ListViewItem();
-                item.Text = workerList[i].getFirstName() + " " + workerList[i].getLastName();
-                item.SubItems.Add(workerList[i].getId());
-                item.SubItems.Add(workerList[i].getSalary());
-                item.SubItems.Add(Utility.tax(workerList[i].getSalary()).ToString()+"%");
-                item.SubItems.Add(workerList[i].getNetSalary());
-                item.SubItems.Add(Utility.monthtax(workerList[i].getSalary(), Utility.tax(workerList[i].getSalary())).ToString()); 
-                item.SubItems.Add(workerList[i].getEmail());
-                listView1.Items.Add(item);
-            }
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void WorkerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Add_Single_NewWorker_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 workerDialog = new Form2();
             workerDialog.ShowDialog();
-            initializeTable();
+            InitializeTable();
         }
 
-        private void Workers10KToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Add_Multi_NewWorker_StripMenuItem_Click(object sender, EventArgs e)
         {
-            progressBar1.Show();
             for (int i = 0; i < 10000; i++)
             {
                 Worker worker = new Worker();
                 workerList.Add(worker);
+            }
+            InitializeTable();
+        }
+        public void InitializeTable()
+        {
+            ListViewItem item;
+            progressBar1.Show();
+            for (int i = 0; i < workerList.Count; i++)
+            {
+                item = new ListViewItem();
+                item.Text = workerList[i].getFirstName() + " " + workerList[i].getLastName();
+                item.SubItems.Add(workerList[i].getId());
+                item.SubItems.Add(workerList[i].getSalary());
+                item.SubItems.Add(Utility.tax(workerList[i].getSalary()).ToString() + "%");
+                item.SubItems.Add(workerList[i].getNetSalary());
+                item.SubItems.Add(Utility.monthtax(workerList[i].getSalary(), Utility.tax(workerList[i].getSalary())).ToString());
+                listView1.Items.Add(item);
                 progressBar1.PerformStep();
             }
-            initializeTable();
             progressBar1.Hide();
+            progressBar1.Value = 0;
         }
     }
 }
