@@ -26,7 +26,7 @@ namespace HumanResourcesManager
             phoneNum = "052-111VeEinShamAfEhad";
             address = "N0where";
             salary = Utility.generateSalary();
-            netSalary = "tax(salary)";
+            netSalary = (Int32.Parse(salary) - Utility.monthtax(salary, Utility.tax(salary))).ToString();
         }
         public Worker(string firstName, string lastName, string id, string email, string phoneNum, string address, string salary)
         {
@@ -37,7 +37,7 @@ namespace HumanResourcesManager
             this.phoneNum = phoneNum;
             this.address = address;
             this.salary = salary;
-            this.netSalary = "tax(salary)";
+            this.netSalary = (Int32.Parse(salary) - Utility.monthtax(salary, Utility.tax(salary))).ToString();
         }
         public String getFirstName() { return firstName; }
         public String getLastName() { return lastName; }
@@ -47,6 +47,7 @@ namespace HumanResourcesManager
         public String getAddress() { return address; }
         public String getSalary() { return salary; }
         public String getNetSalary() { return netSalary; }
+       
     }
 
 }

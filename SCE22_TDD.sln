@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesManager", "HumanResourcesManager\HumanResourcesManager.csproj", "{FFA740E2-6638-47AA-8A44-E23B7A0AE708}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesManagerTests1", "HumanResourcesManagerTests1\HumanResourcesManagerTests1.csproj", "{3FF0ECFA-8B07-4ECB-8ED4-3F4CA34F2078}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FFA740E2-6638-47AA-8A44-E23B7A0AE708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFA740E2-6638-47AA-8A44-E23B7A0AE708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFA740E2-6638-47AA-8A44-E23B7A0AE708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF0ECFA-8B07-4ECB-8ED4-3F4CA34F2078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF0ECFA-8B07-4ECB-8ED4-3F4CA34F2078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF0ECFA-8B07-4ECB-8ED4-3F4CA34F2078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF0ECFA-8B07-4ECB-8ED4-3F4CA34F2078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

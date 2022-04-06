@@ -29,7 +29,7 @@ namespace HumanResourcesManager
         private void toolStripTextBox2_Click(object sender, EventArgs e)
         {
             progressBar1.Show();
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < 10000; i++)
             {
                 Worker worker = new Worker();
                 workerList.Add(worker);
@@ -47,11 +47,17 @@ namespace HumanResourcesManager
                 item.Text = workerList[i].getFirstName() + " " + workerList[i].getLastName();
                 item.SubItems.Add(workerList[i].getId());
                 item.SubItems.Add(workerList[i].getSalary());
-                item.SubItems.Add("");
-                item.SubItems.Add("");
+                item.SubItems.Add(Utility.tax(workerList[i].getSalary()).ToString()+"%");
+                item.SubItems.Add(workerList[i].getNetSalary());
+                item.SubItems.Add(Utility.monthtax(workerList[i].getSalary(), Utility.tax(workerList[i].getSalary())).ToString()); 
                 item.SubItems.Add(workerList[i].getEmail());
                 listView1.Items.Add(item);
             }
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

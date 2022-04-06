@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WorkerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WorkerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WorkerSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
             this.WorkerTax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WorkerNetSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.monthFee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.WorkerEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.toolStrip1.SuspendLayout();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // WorkerName
@@ -61,6 +57,8 @@
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -69,98 +67,77 @@
             this.WorkerSalary,
             this.WorkerTax,
             this.WorkerNetSalary,
+            this.monthFee,
             this.WorkerEmail});
             this.listView1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 78);
+            this.listView1.Location = new System.Drawing.Point(9, 115);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(957, 307);
+            this.listView1.Size = new System.Drawing.Size(829, 250);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // WorkerTax
             // 
-            this.WorkerTax.Text = "חישוב מס";
+            this.WorkerTax.Text = "אחוז מס";
             this.WorkerTax.Width = 99;
             // 
             // WorkerNetSalary
             // 
+            this.WorkerNetSalary.DisplayIndex = 5;
             this.WorkerNetSalary.Text = "משכורת נטו";
             this.WorkerNetSalary.Width = 114;
             // 
-            // toolStrip1
+            // monthFee
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(981, 27);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripTextBox2});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(76, 24);
-            this.toolStripDropDownButton1.Text = "הוסף";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(229, 26);
-            this.toolStripTextBox1.Text = "עובד חדש";
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
-            // 
-            // toolStripTextBox2
-            // 
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(229, 26);
-            this.toolStripTextBox2.Text = "10,000 עובדים חדשים";
-            this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 385);
-            this.progressBar1.Maximum = 1000;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(957, 26);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 5;
-            this.progressBar1.Visible = false;
+            this.monthFee.DisplayIndex = 4;
+            this.monthFee.Text = "מס הכנסה חודשי";
+            this.monthFee.Width = 124;
             // 
             // WorkerEmail
             // 
             this.WorkerEmail.Text = "E-Mail";
             this.WorkerEmail.Width = 76;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(9, 369);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
+            this.progressBar1.Maximum = 1000;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(829, 21);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Visible = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(850, 431);
+            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(981, 465);
+            this.ClientSize = new System.Drawing.Size(847, 430);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.listView1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "Form1";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -169,14 +146,12 @@
         private System.Windows.Forms.ColumnHeader WorkerID;
         private System.Windows.Forms.ColumnHeader WorkerSalary;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripTextBox2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ColumnHeader WorkerTax;
         private System.Windows.Forms.ColumnHeader WorkerNetSalary;
         private System.Windows.Forms.ColumnHeader WorkerEmail;
+        private System.Windows.Forms.ColumnHeader monthFee;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

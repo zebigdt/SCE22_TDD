@@ -46,7 +46,7 @@ namespace HumanResourcesManager
         public static String generateFirstName()
         {
 
-            return namesArray[generator.Next(namesArray.Length + 1)];
+            return namesArray[generator.Next(namesArray.Length)];
         }
 
         public static String generateLastName()
@@ -67,9 +67,9 @@ namespace HumanResourcesManager
 
         public static String he_en(String he)
         {
-            for(int i = 0; i < he_en_letters.GetLength(0); i++)
+            for (int i = 0; i < he_en_letters.GetLength(0); i++)
             {
-                if(he_en_letters[i, 0] == he)
+                if (he_en_letters[i, 0] == he)
                 {
                     return he_en_letters[i, 1];
                 }
@@ -80,16 +80,31 @@ namespace HumanResourcesManager
         public static String generateEmail(String firstName, String lastName)
         {
             String email = "";
-            foreach(char c in firstName)
+            foreach (char c in firstName)
             {
                 email += he_en(c.ToString());
             }
-            foreach(char c in lastName)
+            foreach (char c in lastName)
             {
                 email += he_en(c.ToString());
             }
 
-            return email + "@walla.co.il";
+            return email + "@wladodmoshe.co.il";
+        }
+        public static int tax(string salary)
+        {
+            int sa = Int32.Parse(salary);
+            if (sa <= 6450) { return 10; }
+            else if (sa >= 6451 && sa <= 9240) { return 14; }
+            else if (sa >= 9241 && sa <= 14840) { return 20; }
+            else if (sa >= 14841 && sa <= 20620) { return 31; }
+            else if (sa >= 20621 && sa <= 42910) { return 35; }
+            else { return 47; }
+
+        }
+        public static double monthtax(string salary, int tax)
+        {
+            return Int32.Parse(salary) * (0.01 * tax);
         }
     }
 }
