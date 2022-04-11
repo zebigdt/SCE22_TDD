@@ -27,7 +27,7 @@ namespace HumanResourcesManager
 
         private void Add_Multi_NewWorker_StripMenuItem_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Worker worker = new Worker();
                 workerList.Add(worker);
@@ -36,6 +36,7 @@ namespace HumanResourcesManager
         }
         public void InitializeTable()
         {
+            listView1.Items.Clear();
             ListViewItem item;
             progressBar1.Show();
             for (int i = 0; i < workerList.Count; i++)

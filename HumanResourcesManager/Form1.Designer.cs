@@ -109,7 +109,7 @@
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.progressBar1.Location = new System.Drawing.Point(11, 441);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar1.Maximum = 10000;
+            this.progressBar1.Maximum = 10;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.progressBar1.Size = new System.Drawing.Size(1177, 26);
