@@ -77,6 +77,11 @@ namespace HumanResourcesManager
 
             return "-";
         }
+        public static string generatePhoneNum()
+        {
+            string phoneNum = "05" + generator.Next(0,6).ToString() + generator.Next(1000000,10000000).ToString();
+            return phoneNum;
+        }
         public static String generateEmail(String firstName, String lastName)
         {
             String email = "";

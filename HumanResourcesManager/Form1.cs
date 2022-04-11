@@ -48,6 +48,7 @@ namespace HumanResourcesManager
                 item.SubItems.Add(Utility.tax(workerList[i].getSalary()).ToString() + "%");
                 item.SubItems.Add(workerList[i].getNetSalary());
                 item.SubItems.Add(Utility.monthtax(workerList[i].getSalary(), Utility.tax(workerList[i].getSalary())).ToString());
+                item.SubItems.Add(workerList[i].getPhoneNum());
                 listView1.Items.Add(item);
                 progressBar1.PerformStep();
             }

@@ -40,6 +40,7 @@
             this.AddWorker_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Single_NewWorker_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_Multi_NewWorker_StripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phoneNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             this.WorkerSalary,
             this.WorkerTax,
             this.WorkerNetSalary,
-            this.monthFee});
+            this.monthFee,
+            this.phoneNum});
             this.listView1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
@@ -152,6 +154,10 @@
             this.Add_Multi_NewWorker_StripMenuItem.Text = "10,000 עובדים חדשים";
             this.Add_Multi_NewWorker_StripMenuItem.Click += new System.EventHandler(this.Add_Multi_NewWorker_StripMenuItem_Click);
             // 
+            // phoneNum
+            // 
+            this.phoneNum.Text = "מספר טלפון";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -187,6 +193,7 @@
         private System.Windows.Forms.ToolStripMenuItem AddWorker_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Add_Single_NewWorker_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Add_Multi_NewWorker_StripMenuItem;
+        private System.Windows.Forms.ColumnHeader phoneNum;
     }
 }
 
