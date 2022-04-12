@@ -9,9 +9,9 @@ namespace HumanResourcesManager
 {
     public class Utility
     {
-        private static String[] namesArray = File.ReadAllLines("names.txt", Encoding.GetEncoding("Windows-1255"));
-        private static String[] lastNamesArray = File.ReadAllLines("lastnames.txt", Encoding.GetEncoding("Windows-1255"));
-        private static String[] heArr = File.ReadAllLines("hebrewletters.txt", Encoding.GetEncoding("Windows-1255"));
+        private static string[] namesArray = File.ReadAllLines("names.txt", Encoding.GetEncoding("Windows-1255"));
+        private static string[] lastNamesArray = File.ReadAllLines("lastnames.txt", Encoding.GetEncoding("Windows-1255"));
+        private static string[] heArr = File.ReadAllLines("hebrewletters.txt", Encoding.GetEncoding("Windows-1255"));
 
         private static string[,] he_en_letters = new string[,] { {heArr[0], "a"},
                                                                 {heArr[1], "b"},
@@ -41,31 +41,31 @@ namespace HumanResourcesManager
                                                                 {heArr[25], "f"},
                                                                 {heArr[26], "tz"} };
 
+        public static Random generator = new Random(DateTime.Now.Millisecond);
 
-        private static Random generator = new Random(DateTime.Now.Millisecond);
-        public static String generateFirstName()
+        public static string generateFirstName()
         {
 
             return namesArray[generator.Next(namesArray.Length)];
         }
 
-        public static String generateLastName()
+        public static string generateLastName()
         {
             return lastNamesArray[generator.Next(namesArray.Length + 1)];
         }
 
-        public static String generateID()
+        public static string generateID()
         {
-            String firstNum = generator.Next(2, 4).ToString();
+            string firstNum = generator.Next(2, 4).ToString();
             return firstNum + generator.Next(10000000, 99999999).ToString();
         }
 
-        public static String generateSalary()
+        public static string generateSalary()
         {
             return generator.Next(3000, 50000).ToString();
         }
 
-        public static String he_en(String he)
+        public static string he_en(string he)
         {
             for (int i = 0; i < he_en_letters.GetLength(0); i++)
             {
@@ -77,14 +77,16 @@ namespace HumanResourcesManager
 
             return "-";
         }
+
         public static string generatePhoneNum()
         {
-            string phoneNum = "05" + generator.Next(0,6).ToString() + generator.Next(1000000,10000000).ToString();
+            string phoneNum = "05" + generator.Next(0, 6).ToString() + generator.Next(1000000, 10000000).ToString();
             return phoneNum;
         }
-        public static String generateEmail(String firstName, String lastName)
+
+        public static string generateEmail(string firstName, string lastName)
         {
-            String email = "";
+            string email = "";
             foreach (char c in firstName)
             {
                 email += he_en(c.ToString());
@@ -96,6 +98,7 @@ namespace HumanResourcesManager
 
             return email + "@ladodmoshe.co.il";
         }
+        //כמה אחוז מס לקח לך מס הכנסה 
         public static int tax(string salary)
         {
             int sa = Int32.Parse(salary);
@@ -107,9 +110,120 @@ namespace HumanResourcesManager
             else { return 47; }
 
         }
+        //כמה מס הכנסה לקח לך
         public static double monthtax(string salary, int tax)
         {
             return Int32.Parse(salary) * (0.01 * tax);
         }
+
+        //Sort version 1 - Bubble Sort O(n^2)
+        //
+        //public static bool Sort( List<Worker> arr)
+        //{
+        //    Worker temp;
+        //    if(arr.Count == 0) { return false; }
+        //    else
+        //    {
+        //        for (int j = 0; j <= arr.Count() - 2; j++)
+        //        {
+        //            for (int i = 0; i <= arr.Count() - 2; i++)
+        //            {
+        //                if (Int32.Parse(arr[i].getSalary()) < Int32.Parse(arr[i + 1].getSalary()))
+        //                {
+        //                    temp = arr[i + 1];
+        //                    arr[i + 1] = arr[i];
+        //                    arr[i] = temp;
+        //                }
+        //            }
+        //        }
+        //        return true;
+        //    }       
+        //}
+
+        public static void merge(List<Worker> arr, int l, int m, int r)
+        {
+            // Find sizes of two
+            // subarrays to be merged
+            int n1 = m - l + 1;
+            int n2 = r - m;
+
+            // Create temp arrays
+            Worker[] L = new Worker[n1];
+            Worker[] R = new Worker[n2];
+            int i, j;
+
+            // Copy data to temp arrays
+            for (i = 0; i < n1; ++i)
+                L[i] = arr[l + i];
+            for (j = 0; j < n2; ++j)
+                R[j] = arr[m+ 1 + j];
+
+            // Merge the temp arrays
+
+            // Initial indexes of first
+            // and second subarrays
+            i = 0;
+            j = 0;
+
+            // Initial index of merged
+            // subarray array
+            int k = l;
+            while (i < n1 && j < n2)
+            {
+                if (Int32.Parse(L[i].getSalary()) >= Int32.Parse(R[j].getSalary()))
+                {
+                    arr[k] = L[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            }
+
+            // Copy remaining elements
+            // of L[] if any
+            while (i < n1)
+            {
+                arr[k] = L[i];
+                i++;
+                k++;
+            }
+
+            // Copy remaining elements
+            // of R[] if any
+            while (j < n2)
+            {
+                arr[k] = R[j];
+                j++;
+                k++;
+            }
+        }
+
+        // Main function that
+        // sorts arr[l..r] using
+        // merge()
+        public static bool Sort(List<Worker> arr, int l, int r)
+        {
+            if(arr.Count == 0) { return false; }
+            if (l < r)
+            {
+                // Find the middle
+                // point
+                int m = l + (r - l) / 2;
+
+                // Sort first and
+                // second halves
+                Sort(arr, l, m);
+                Sort(arr, m + 1, r);
+
+                // Merge the sorted halves
+                merge(arr, l, m, r);
+            }
+            return true;
+        }
     }
+    
 }

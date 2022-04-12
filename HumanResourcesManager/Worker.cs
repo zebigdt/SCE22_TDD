@@ -8,14 +8,14 @@ namespace HumanResourcesManager
 {
     public class Worker
     {
-        private String firstName;
-        private String lastName;
-        private String id;
-        private String email;
-        private String phoneNum;
-        private String address;
-        private String salary;
-        private String netSalary;
+        private string firstName;
+        private string lastName;
+        private string id;
+        private string email;
+        private string phoneNum;
+        private string address;
+        private string salary;
+        private string netSalary;
 
         public Worker()
         {
@@ -37,17 +37,27 @@ namespace HumanResourcesManager
             this.phoneNum = phoneNum;
             this.address = address;
             this.salary = salary;
+            //כמה כסף נשאר לך אחרי שחלבו אותך 
             this.netSalary = (Int32.Parse(salary) - Utility.monthtax(salary, Utility.tax(salary))).ToString();
         }
-        public String getFirstName() { return firstName; }
-        public String getLastName() { return lastName; }
-        public String getId() { return id; }
-        public String getEmail() { return email; }
-        public String getPhoneNum() { return phoneNum; }
-        public String getAddress() { return address; }
-        public String getSalary() { return salary; }
-        public String getNetSalary() { return netSalary; }
-       
+        public Worker(Worker other)
+        {
+            firstName = other.firstName;
+            lastName = other.lastName;
+            id = other.id;
+            email = other.email;
+            phoneNum = other.phoneNum;
+            address = other.address;
+            salary = other.salary;
+            netSalary =other.netSalary;
+        }
+        public string getFirstName() { return firstName; }
+        public string getLastName() { return lastName; }
+        public string getId() { return id; }
+        public string getEmail() { return email; }
+        public string getPhoneNum() { return phoneNum; }
+        public string getAddress() { return address; }
+        public string getSalary() { return salary; }
+        public string getNetSalary() { return netSalary; }
     }
-
 }
