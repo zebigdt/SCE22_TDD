@@ -18,7 +18,7 @@ namespace HumanResourcesManager
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if(textBox1.Text==""|| textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" )
             {
@@ -32,7 +32,7 @@ namespace HumanResourcesManager
             }
             
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -52,7 +52,17 @@ namespace HumanResourcesManager
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void TextBox1_Leave(object sender, EventArgs e)
+        {
+            if(textBox1.Text.Length < 2)
+            {
+                MessageBox.Show("שם אינו תקין");
+                textBox1.Text = "";
+                textBox1.Focus();
+            }
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -69,7 +79,17 @@ namespace HumanResourcesManager
                 textBox2.Focus();
             }
         }
-        private void textBox3_TextChanged(object sender, EventArgs e)
+
+        private void TextBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text.Length < 2)
+            {
+                MessageBox.Show("שם משפחה אינו תקין");
+                textBox2.Text = "";
+                textBox2.Focus();
+            }
+        }
+        private void TextBox3_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -86,7 +106,16 @@ namespace HumanResourcesManager
                 textBox3.Focus();
             }
         }
-        private void textBox4_Leave(object sender, EventArgs e)
+        private void TextBox3_Leave(object sender, EventArgs e)
+        {
+            if (!Utility.ValidateID(textBox3.Text))
+            {
+                MessageBox.Show("מספר תעודת זהות אינו תקין");
+                textBox3.Text = "";
+                textBox3.Focus();
+            }
+        }
+        private void TextBox4_Leave(object sender, EventArgs e)
         {
             try
             {
@@ -106,7 +135,7 @@ namespace HumanResourcesManager
             }
 
         }
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void TextBox5_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -123,7 +152,16 @@ namespace HumanResourcesManager
                 textBox5.Focus();
             }
         }
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void TextBox5_Leave(object sender, EventArgs e)
+        {
+            if (textBox5.Text.Length < 8 || textBox5.Text.Length > 10)
+            {
+                MessageBox.Show("מספר טלפון אינו תקין");
+                textBox5.Text = "";
+                textBox5.Focus();
+            }
+        }
+        private void TextBox6_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -141,7 +179,17 @@ namespace HumanResourcesManager
                 textBox6.Focus();
             }
         }
-        private void textBox7_TextChanged(object sender, EventArgs e)
+
+        private void TextBox6_Leave(object sender, EventArgs e)
+        {
+            if (textBox6.Text.Length < 2)
+            {
+                MessageBox.Show("כתובת אינה תקינה");
+                textBox6.Text = "";
+                textBox6.Focus();
+            }
+        }
+        private void TextBox7_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -160,15 +208,26 @@ namespace HumanResourcesManager
             }
         }
 
-        private void textBox7_Leave(object sender, EventArgs e)
+        private void TextBox7_Leave(object sender, EventArgs e)
         {
-            int sa = Int32.Parse( textBox7.Text);
-            if (sa < 3000 || sa > 50000)
+            try
+            {
+                int sa = Int32.Parse(textBox7.Text);
+                if (sa < 3000 || sa > 50000)
+                {
+                    MessageBox.Show("אנא הכנס משכורת בין 3,000 ל50,000");
+                    textBox7.Text = "";
+                    textBox7.Focus();
+                }
+            }
+            catch(FormatException)
             {
                 MessageBox.Show("אנא הכנס משכורת בין 3,000 ל50,000");
-                textBox7.Text = "";
                 textBox7.Focus();
             }
+            
         }
+
+        
     }
 }

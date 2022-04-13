@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace HumanResourcesManager
 {
@@ -42,23 +43,24 @@ namespace HumanResourcesManager
 
         public void InitializeTable()
         {
-            label1.Visible = true;
-            this.Update();
+            
             ListViewItem item;
-            listView1.Items.Clear();
+            ListView_1.Items.Clear();
             progressBar1.Maximum = workerList.Count();
             progressBar1.Show();
+            label1.Visible = true;
+            this.Update();
             for (int i = 0; i < workerList.Count; i++)
             {
                 item = new ListViewItem();
                 item.Text = (i+1).ToString();
-                item.SubItems.Add(workerList[i].getFirstName() + " " + workerList[i].getLastName());
-                item.SubItems.Add(workerList[i].getId());
-                item.SubItems.Add(workerList[i].getSalary());
-                item.SubItems.Add(Utility.tax(workerList[i].getSalary()).ToString() + "%");
-                item.SubItems.Add(workerList[i].getNetSalary());
-                item.SubItems.Add(Utility.monthtax(workerList[i].getSalary(), Utility.tax(workerList[i].getSalary())).ToString());
-                listView1.Items.Add(item);
+                item.SubItems.Add(workerList[i].GetFirstName() + " " + workerList[i].GetLastName());
+                item.SubItems.Add(workerList[i].GetId());
+                item.SubItems.Add(workerList[i].GetSalary());
+                item.SubItems.Add(Utility.CalculateTaxPercent(Double.Parse(workerList[i].GetSalary()), Double.Parse(workerList[i].GetNetSalary())).ToString());
+                item.SubItems.Add(Utility.CalculateIncomeTax(Double.Parse(workerList[i].GetSalary())).ToString());
+                item.SubItems.Add(workerList[i].GetNetSalary().ToString());
+                ListView_1.Items.Add(item);
                 progressBar1.PerformStep();
             }
             progressBar1.Hide();
@@ -87,12 +89,20 @@ namespace HumanResourcesManager
             }
         }
 
-        private void listView1_ItemActivate(object sender, EventArgs e)
+        private void ListView1_ItemActivate(object sender, EventArgs e)
         {
-            ListViewItem item = listView1.SelectedItems[0];
+            ListViewItem item = ListView_1.SelectedItems[0];
             Worker worker = workerList[item.Index];
             Form3 workerDialog = new Form3(worker);
             workerDialog.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                if (MessageBox.Show("פעולה זו תסגור את האפליקציה והמידע ימחק", "יציאה", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
         }
     }
 }

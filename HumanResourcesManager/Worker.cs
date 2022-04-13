@@ -8,25 +8,25 @@ namespace HumanResourcesManager
 {
     public class Worker
     {
-        private string firstName;
-        private string lastName;
-        private string id;
-        private string email;
-        private string phoneNum;
-        private string address;
-        private string salary;
-        private string netSalary;
+        private readonly string firstName;
+        private readonly string lastName;
+        private readonly string id;
+        private readonly string email;
+        private readonly string phoneNum;
+        private readonly string address;
+        private readonly string salary;
+        private readonly string netSalary;
 
         public Worker()
         {
-            firstName = Utility.generateFirstName();
-            lastName = Utility.generateLastName();
-            id = Utility.generateID();
-            email = Utility.generateEmail(firstName,lastName);
-            phoneNum = Utility.generatePhoneNum();
-            address = Utility.generateAddress();
-            salary = Utility.generateSalary();
-            netSalary = (Int32.Parse(salary) - Utility.monthtax(salary, Utility.tax(salary))).ToString();
+            firstName = Utility.GenerateFirstName();
+            lastName = Utility.GenerateLastName();
+            id = Utility.GenerateID();
+            email = Utility.GenerateEmail(firstName, lastName);
+            phoneNum = Utility.GeneratePhoneNum();
+            address = Utility.GenerateAddress();
+            salary = Utility.GenerateSalary();
+            netSalary = (Double.Parse(salary) - Utility.CalculateIncomeTax(Double.Parse(salary))).ToString();
         }
         public Worker(string firstName, string lastName, string id, string email, string phoneNum, string address, string salary)
         {
@@ -38,7 +38,7 @@ namespace HumanResourcesManager
             this.address = address;
             this.salary = salary;
             //כמה כסף נשאר לך אחרי שחלבו אותך 
-            this.netSalary = (Int32.Parse(salary) - Utility.monthtax(salary, Utility.tax(salary))).ToString();
+            this.netSalary = (Double.Parse(salary) - Utility.CalculateIncomeTax(Double.Parse(salary))).ToString();
         }
         public Worker(Worker other)
         {
@@ -49,15 +49,15 @@ namespace HumanResourcesManager
             phoneNum = other.phoneNum;
             address = other.address;
             salary = other.salary;
-            netSalary =other.netSalary;
+            netSalary = other.netSalary;
         }
-        public string getFirstName() { return firstName; }
-        public string getLastName() { return lastName; }
-        public string getId() { return id; }
-        public string getEmail() { return email; }
-        public string getPhoneNum() { return phoneNum; }
-        public string getAddress() { return address; }
-        public string getSalary() { return salary; }
-        public string getNetSalary() { return netSalary; }
+        public string GetFirstName() { return firstName; }
+        public string GetLastName() { return lastName; }
+        public string GetId() { return id; }
+        public string GetEmail() { return email; }
+        public string GetPhoneNum() { return phoneNum; }
+        public string GetAddress() { return address; }
+        public string GetSalary() { return salary; }
+        public string GetNetSalary() { return netSalary; }
     }
 }

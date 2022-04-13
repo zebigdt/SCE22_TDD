@@ -60,7 +60,7 @@ namespace HumanResourcesManager.Tests
             List<Worker> workers_empty = new List<Worker>();
             List<Worker> workers = new List<Worker>();
             Worker worker = new Worker();
-            for (int i = 0; i < Utility.generator.Next(10, 100); i++)
+            for (int i = 0; i < Utility.random.Next(10, 100); i++)
                 workers.Add(worker);
             int workerListLength0 = workers.Count;
 
@@ -72,11 +72,20 @@ namespace HumanResourcesManager.Tests
 
             for (int i = 0; i < workers.Count - 2; i++)
             {
-                Assert.IsTrue(Int32.Parse(workers[i].getSalary()) <= Int32.Parse(workers[i + 1].getSalary()));
+                Assert.IsTrue(Int32.Parse(workers[i].GetSalary()) <= Int32.Parse(workers[i + 1].GetSalary()));
             }
             Assert.AreEqual(workerListLength0, workers.Count);
             Assert.IsFalse(Utility.Sort(workers_empty, 0, workers_empty.Count - 1));
             Assert.IsTrue(Utility.Sort(workers, 0, workers.Count - 1));
+        }
+
+        [TestMethod()]
+        public void CalculateIncomeTaxTest()
+        {
+            /* _Test version 0_ */
+            //int salary;
+            //int expectedIncomeTax;
+            //Assert.AreEqual(salary, expectedIncomeTax);
         }
     }
 }

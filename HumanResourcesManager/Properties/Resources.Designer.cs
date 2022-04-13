@@ -63,6 +63,16 @@ namespace HumanResourcesManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap enhe {
+            get {
+                object obj = ResourceManager.GetObject("enhe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green_plus {
             get {
                 object obj = ResourceManager.GetObject("green_plus", resourceCulture);

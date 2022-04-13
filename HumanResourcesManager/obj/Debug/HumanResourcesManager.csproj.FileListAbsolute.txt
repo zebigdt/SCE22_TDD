@@ -23,3 +23,7 @@ F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.cspr
 F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.exe
 F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.pdb
 D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.Form3.resources
+D:\Projects\SCE22_TDD\HumanResourcesManager\bin\Debug\HumanResourcesManager.exe.manifest
+D:\Projects\SCE22_TDD\HumanResourcesManager\bin\Debug\HumanResourcesManager.application
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.exe.manifest
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.application

@@ -9,65 +9,58 @@ namespace HumanResourcesManager
 {
     public class Utility
     {
-        private static string[] namesArray = File.ReadAllLines("names.txt", Encoding.GetEncoding("Windows-1255"));
-        private static string[] lastNamesArray = File.ReadAllLines("lastnames.txt", Encoding.GetEncoding("Windows-1255"));
-        private static string[] cityNamesArray = File.ReadAllLines("cities.txt", Encoding.GetEncoding("Windows-1255"));
-        private static string[] streetNamesArray = File.ReadAllLines("streetnames.txt", Encoding.GetEncoding("Windows-1255"));
-        private static string[] heArr = File.ReadAllLines("hebrewletters.txt", Encoding.GetEncoding("Windows-1255"));
-        private static string[] emailProviderArray = new string[] { "@walla.co.il", "@gmail.com", "@ladodmoshe.co.il"};
-        private static string[,] he_en_letters = new string[,] { {heArr[0], "a"},
-                                                                {heArr[1], "b"},
-                                                                {heArr[2], "g"},
-                                                                {heArr[3], "d"},
-                                                                {heArr[4], "h"},
-                                                                {heArr[5], "v"},
-                                                                {heArr[6], "z"},
-                                                                {heArr[7], "h"},
-                                                                {heArr[8], "t"},
-                                                                {heArr[9], "y"},
-                                                                {heArr[10], "k"},
-                                                                {heArr[11], "l"},
-                                                                {heArr[12], "m"},
-                                                                {heArr[13], "n"},
-                                                                {heArr[14], "s"},
-                                                                {heArr[15], "i"},
-                                                                {heArr[16], "p"},
-                                                                {heArr[17], "tz"},
-                                                                {heArr[18], "k"},
-                                                                {heArr[19], "r"},
-                                                                {heArr[20], "sh"},
-                                                                {heArr[21], "t"},
-                                                                {heArr[22], "h"},
-                                                                {heArr[23], "m"},
-                                                                {heArr[24], "n"},
-                                                                {heArr[25], "f"},
-                                                                {heArr[26], "tz"} };
+        public static Random random = new Random(DateTime.Now.Millisecond);
+        private readonly static string[] namesArray = File.ReadAllLines("names.txt", Encoding.GetEncoding("Windows-1255"));
+        private readonly static string[] lastNamesArray = File.ReadAllLines("lastnames.txt", Encoding.GetEncoding("Windows-1255"));
+        private readonly static string[] cityNamesArray = File.ReadAllLines("cities.txt", Encoding.GetEncoding("Windows-1255"));
+        private readonly static string[] streetNamesArray = File.ReadAllLines("streetnames.txt", Encoding.GetEncoding("Windows-1255"));
+        private readonly static string[] heArr = File.ReadAllLines("hebrewletters.txt", Encoding.GetEncoding("Windows-1255"));
+        private readonly static string[] emailProviderArray = new string[] { "@walla.co.il", "@gmail.com", "@ladodmoshe.co.il" };
+        private readonly static string[,] he_en_letters = new string[,] { {heArr[0], "a"},{heArr[1], "b"},{heArr[2], "g"},{heArr[3], "d"},
+                                                                {heArr[4], "h"},{heArr[5], "v"},{heArr[6], "z"},{heArr[7], "h"},
+                                                                {heArr[8], "t"},{heArr[9], "y"},{heArr[10], "k"},{heArr[11], "l"},
+                                                                {heArr[12], "m"},{heArr[13], "n"},{heArr[14], "s"},{heArr[15], "i"},
+                                                                {heArr[16], "p"},{heArr[17], "tz"},{heArr[18], "k"},{heArr[19], "r"},
+                                                                {heArr[20], "sh"},{heArr[21], "t"},{heArr[22], "h"},{heArr[23], "m"},
+                                                                {heArr[24], "n"},{heArr[25], "f"},{heArr[26], "tz"} };
 
-        public static Random generator = new Random(DateTime.Now.Millisecond);
-
-        public static string generateFirstName()
+        public static string GenerateFirstName()
         {
 
-            return namesArray[generator.Next(namesArray.Length)];
+            return namesArray[random.Next(namesArray.Length)];
         }
 
-        public static string generateLastName()
+        public static string GenerateLastName()
         {
-            return lastNamesArray[generator.Next(namesArray.Length)];
+            return lastNamesArray[random.Next(namesArray.Length)];
         }
 
-        public static string generateID()
+        public static string GenerateID()
         {
-            string firstNum = generator.Next(2, 4).ToString();
-            return firstNum + generator.Next(10000000, 99999999).ToString();
+            string firstNum = random.Next(2, 4).ToString();
+            return firstNum + random.Next(10000000, 99999999).ToString();
         }
 
-        public static string generateSalary()
+        public static bool ValidateID(string id)
         {
-            return generator.Next(3000, 50000).ToString();
+            if (id.Length != 9) return false;
+            int counter = 0, incNum, i;
+            for (i = 0; i < 9; i++)
+            {
+                incNum = id[i] - '0';
+                incNum *= (i % 2) + 1;
+                if (incNum > 9) incNum -= 9;
+                counter += incNum;
+            }
+            return (counter % 10 == 0);
         }
 
-        public static string he_en(string he)
+        public static string GenerateSalary()
+        {
+            return random.Next(3000, 50000).ToString();
+        }
+
+        public static string He_En(string he)
         {
             for (int i = 0; i < he_en_letters.GetLength(0); i++)
             {
@@ -80,48 +73,46 @@ namespace HumanResourcesManager
             return "-";
         }
 
-        public static string generatePhoneNum()
+        public static string GeneratePhoneNum()
         {
-            string phoneNum = "05" + generator.Next(0, 6).ToString() + generator.Next(1000000, 10000000).ToString();
+            string phoneNum = "05" + random.Next(0, 6).ToString() + random.Next(1000000, 10000000).ToString();
             return phoneNum;
         }
 
-        public static string generateEmail(string firstName, string lastName)
+        public static string GenerateEmail(string firstName, string lastName)
         {
             string email = "";
             foreach (char c in firstName)
             {
-                email += he_en(c.ToString());
+                email += He_En(c.ToString());
             }
 
-            return email + he_en(lastName[0].ToString()) + he_en(lastName[1].ToString()) + emailProviderArray[generator.Next(0,emailProviderArray.Length)];
+            return email + He_En(lastName[0].ToString()) + He_En(lastName[1].ToString()) + random.Next(80, 100).ToString() + emailProviderArray[random.Next(0, emailProviderArray.Length)];
         }
 
-        public static string generateAddress()
+        public static string GenerateAddress()
         {
-            string address = streetNamesArray[generator.Next(streetNamesArray.Length)].ToString()
-                                + " " + generator.Next(100).ToString() + ", "
-                                + cityNamesArray[generator.Next(cityNamesArray.Length)].ToString();
+            string address = streetNamesArray[random.Next(streetNamesArray.Length)].ToString()
+                                + " " + random.Next(100).ToString() + ", "
+                                + cityNamesArray[random.Next(cityNamesArray.Length)].ToString();
 
             return address;
         }
 
-        //כמה אחוז מס לקח לך מס הכנסה 
-        public static int tax(string salary)
+        public static double CalculateIncomeTax(double salary)
         {
-            int sa = Int32.Parse(salary);
-            if (sa <= 6450) { return 10; }
-            else if (sa >= 6451 && sa <= 9240) { return 14; }
-            else if (sa >= 9241 && sa <= 14840) { return 20; }
-            else if (sa >= 14841 && sa <= 20620) { return 31; }
-            else if (sa >= 20621 && sa <= 42910) { return 35; }
-            else { return 47; }
-
+            if (salary <= 6450) { salary *= 0.10; }
+            else if (salary >= 6451 && salary <= 9240) { salary *= 0.14; }
+            else if (salary >= 9241 && salary <= 14840) { salary *= 0.20; }
+            else if (salary >= 14841 && salary <= 20620) { salary *= 0.31; }
+            else if (salary >= 20621 && salary <= 42910) { salary *= 0.35; }
+            else { salary *= 0.47; }
+            return salary;
         }
-        //כמה מס הכנסה לקח לך
-        public static double monthtax(string salary, int tax)
+
+        public static int CalculateTaxPercent(double sal, double netSal)
         {
-            return Int32.Parse(salary) * (0.01 * tax);
+            return 100 * ((int)sal - (int)netSal) / (int)sal;
         }
 
 
@@ -166,11 +157,11 @@ namespace HumanResourcesManager
                 Sort(arr, m + 1, r);
 
                 // Merge the sorted halves
-                merge(arr, l, m, r);
+                Merge(arr, l, m, r);
             }
             return true;
         }
-        public static void merge(List<Worker> arr, int l, int m, int r)
+        public static void Merge(List<Worker> arr, int l, int m, int r)
         {
             // Find sizes of two
             // subarrays to be merged
@@ -186,7 +177,7 @@ namespace HumanResourcesManager
             for (i = 0; i < n1; ++i)
                 L[i] = arr[l + i];
             for (j = 0; j < n2; ++j)
-                R[j] = arr[m+ 1 + j];
+                R[j] = arr[m + 1 + j];
 
             // Merge the temp arrays
 
@@ -200,7 +191,7 @@ namespace HumanResourcesManager
             int k = l;
             while (i < n1 && j < n2)
             {
-                if (Int32.Parse(L[i].getSalary()) >= Int32.Parse(R[j].getSalary()))
+                if (Int32.Parse(L[i].GetSalary()) >= Int32.Parse(R[j].GetSalary()))
                 {
                     arr[k] = L[i];
                     i++;
