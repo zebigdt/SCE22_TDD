@@ -22,23 +22,28 @@ namespace HumanResourcesManager
 
         private void Add_Single_NewWorker_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int prevWorkerListCount = workerList.Count;
             Form2 workerDialog = new Form2();
             workerDialog.ShowDialog();
-            InitializeTable();
+            if (workerList.Count != prevWorkerListCount)
+            {
+                InitializeTable();
+            }
         }
 
         private void Add_Multi_NewWorker_StripMenuItem_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 10000; i++)
             {
-                Worker worker = new Worker();
-                workerList.Add(worker);
+                workerList.Add(new Worker());
             }
             InitializeTable();
         }
 
         public void InitializeTable()
         {
+            label1.Visible = true;
+            this.Update();
             ListViewItem item;
             listView1.Items.Clear();
             progressBar1.Maximum = workerList.Count();
@@ -46,37 +51,48 @@ namespace HumanResourcesManager
             for (int i = 0; i < workerList.Count; i++)
             {
                 item = new ListViewItem();
-                item.Text = workerList[i].getFirstName() + " " + workerList[i].getLastName();
+                item.Text = (i+1).ToString();
+                item.SubItems.Add(workerList[i].getFirstName() + " " + workerList[i].getLastName());
                 item.SubItems.Add(workerList[i].getId());
                 item.SubItems.Add(workerList[i].getSalary());
                 item.SubItems.Add(Utility.tax(workerList[i].getSalary()).ToString() + "%");
                 item.SubItems.Add(workerList[i].getNetSalary());
                 item.SubItems.Add(Utility.monthtax(workerList[i].getSalary(), Utility.tax(workerList[i].getSalary())).ToString());
-                item.SubItems.Add(workerList[i].getPhoneNum());
                 listView1.Items.Add(item);
                 progressBar1.PerformStep();
             }
             progressBar1.Hide();
             progressBar1.Value = 0;
+            label1.Visible = false;
         }
 
         private void SortToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Stopwatch sw = new Stopwatch();
-            label1.Visible = true;
-            this.Update();
-            sw.Start();
-            Utility.Sort(workerList,0,workerList.Count() - 1);
-            sw.Stop();
-            InitializeTable();
-            label1.Visible = false;
-            this.Update();
-            MessageBox.Show("המיון לקח " +sw.Elapsed.TotalSeconds.ToString()+" שניות");
+            if(workerList.Count == 0)
+            {
+                MessageBox.Show("אין עובדים למיין");
+            }
+            else
+            {
+                label1.Visible = true;
+                this.Update();
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                Utility.Sort(workerList, 0, workerList.Count() - 1);
+                sw.Stop();
+                InitializeTable();
+                label1.Visible = false;
+                this.Update();
+                MessageBox.Show("המיון לקח " + sw.Elapsed.TotalSeconds.ToString() + " שניות");
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void listView1_ItemActivate(object sender, EventArgs e)
         {
-
+            ListViewItem item = listView1.SelectedItems[0];
+            Worker worker = workerList[item.Index];
+            Form3 workerDialog = new Form3(worker);
+            workerDialog.ShowDialog();
         }
     }
 }

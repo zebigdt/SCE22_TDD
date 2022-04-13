@@ -22,3 +22,4 @@ F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.cspr
 F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.csproj.CoreCompileInputs.cache
 F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.exe
 F:\projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.pdb
+D:\Projects\SCE22_TDD\HumanResourcesManager\obj\Debug\HumanResourcesManager.Form3.resources

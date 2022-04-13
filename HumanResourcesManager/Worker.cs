@@ -24,7 +24,7 @@ namespace HumanResourcesManager
             id = Utility.generateID();
             email = Utility.generateEmail(firstName,lastName);
             phoneNum = Utility.generatePhoneNum();
-            address = "N0where";
+            address = Utility.generateAddress();
             salary = Utility.generateSalary();
             netSalary = (Int32.Parse(salary) - Utility.monthtax(salary, Utility.tax(salary))).ToString();
         }

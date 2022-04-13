@@ -28,7 +28,8 @@ namespace HumanResourcesManager.Tests
 
             /* _Test version 1_ */
             //
-            //Arrange
+            ////Arrange
+            //
             //List<Worker> workers_empty = new List<Worker>;
             //List<Worker> workers = new List<Worker>();
             //Worker worker = new Worker();
@@ -37,9 +38,13 @@ namespace HumanResourcesManager.Tests
             //    workers.Add(worker);
             //}
             //int workerListLength0 = workers.Count;
+            //
             ////Act
+            //
             //Utility.Sort(workers);
+            //
             ////Assert
+            //
             //for (int i = 0; i < workers.Count-2; i++) 
             //{ 
             //    Assert.IsTrue(Int32.Parse(workers[i].getSalary())<= Int32.Parse(workers[i + 1].getSalary()));
@@ -49,23 +54,29 @@ namespace HumanResourcesManager.Tests
             //Assert.IsTrue(Utility.Sort(workers));
 
             /* _Test version 2_*/
+            //
             //Arrange
+
             List<Worker> workers_empty = new List<Worker>();
             List<Worker> workers = new List<Worker>();
             Worker worker = new Worker();
             for (int i = 0; i < Utility.generator.Next(10, 100); i++)
                 workers.Add(worker);
             int workerListLength0 = workers.Count;
+
             //Act
-            Utility.Sort(workers,0,workers.Count-1);
+
+            Utility.Sort(workers, 0, workers.Count - 1);
+
             //Assert
+
             for (int i = 0; i < workers.Count - 2; i++)
             {
                 Assert.IsTrue(Int32.Parse(workers[i].getSalary()) <= Int32.Parse(workers[i + 1].getSalary()));
             }
             Assert.AreEqual(workerListLength0, workers.Count);
-            Assert.IsFalse(Utility.Sort(workers_empty,0, workers_empty.Count-1));
-            Assert.IsTrue(Utility.Sort(workers,0,workers.Count-1));
+            Assert.IsFalse(Utility.Sort(workers_empty, 0, workers_empty.Count - 1));
+            Assert.IsTrue(Utility.Sort(workers, 0, workers.Count - 1));
         }
     }
 }

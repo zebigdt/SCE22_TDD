@@ -127,7 +127,7 @@ namespace HumanResourcesManager
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, "[^\u0590-\u05FF 0-9-]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, "[^\u0590-\u05FF 0-9-,]"))
                 {
                     MessageBox.Show("אנא הכנס כתובת תקינה");
                     textBox6.Text = textBox1.Text.Remove(textBox6.Text.Length - 1);

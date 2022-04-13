@@ -63,9 +63,29 @@ namespace HumanResourcesManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap enemy {
+        internal static System.Drawing.Bitmap green_plus {
             get {
-                object obj = ResourceManager.GetObject("enemy", resourceCulture);
+                object obj = ResourceManager.GetObject("green_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap missing_profile_photo {
+            get {
+                object obj = ResourceManager.GetObject("missing-profile-photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sort {
+            get {
+                object obj = ResourceManager.GetObject("sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

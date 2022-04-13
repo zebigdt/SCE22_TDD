@@ -11,8 +11,10 @@ namespace HumanResourcesManager
     {
         private static string[] namesArray = File.ReadAllLines("names.txt", Encoding.GetEncoding("Windows-1255"));
         private static string[] lastNamesArray = File.ReadAllLines("lastnames.txt", Encoding.GetEncoding("Windows-1255"));
+        private static string[] cityNamesArray = File.ReadAllLines("cities.txt", Encoding.GetEncoding("Windows-1255"));
+        private static string[] streetNamesArray = File.ReadAllLines("streetnames.txt", Encoding.GetEncoding("Windows-1255"));
         private static string[] heArr = File.ReadAllLines("hebrewletters.txt", Encoding.GetEncoding("Windows-1255"));
-
+        private static string[] emailProviderArray = new string[] { "@walla.co.il", "@gmail.com", "@ladodmoshe.co.il"};
         private static string[,] he_en_letters = new string[,] { {heArr[0], "a"},
                                                                 {heArr[1], "b"},
                                                                 {heArr[2], "g"},
@@ -51,7 +53,7 @@ namespace HumanResourcesManager
 
         public static string generateLastName()
         {
-            return lastNamesArray[generator.Next(namesArray.Length + 1)];
+            return lastNamesArray[generator.Next(namesArray.Length)];
         }
 
         public static string generateID()
@@ -91,13 +93,19 @@ namespace HumanResourcesManager
             {
                 email += he_en(c.ToString());
             }
-            foreach (char c in lastName)
-            {
-                email += he_en(c.ToString());
-            }
 
-            return email + "@ladodmoshe.co.il";
+            return email + he_en(lastName[0].ToString()) + he_en(lastName[1].ToString()) + emailProviderArray[generator.Next(0,emailProviderArray.Length)];
         }
+
+        public static string generateAddress()
+        {
+            string address = streetNamesArray[generator.Next(streetNamesArray.Length)].ToString()
+                                + " " + generator.Next(100).ToString() + ", "
+                                + cityNamesArray[generator.Next(cityNamesArray.Length)].ToString();
+
+            return address;
+        }
+
         //כמה אחוז מס לקח לך מס הכנסה 
         public static int tax(string salary)
         {
@@ -116,12 +124,13 @@ namespace HumanResourcesManager
             return Int32.Parse(salary) * (0.01 * tax);
         }
 
+
         //Sort version 1 - Bubble Sort O(n^2)
         //
-        //public static bool Sort( List<Worker> arr)
+        //public static bool Sort(List<Worker> arr)
         //{
         //    Worker temp;
-        //    if(arr.Count == 0) { return false; }
+        //    if (arr.Count == 0) { return false; }
         //    else
         //    {
         //        for (int j = 0; j <= arr.Count() - 2; j++)
@@ -137,9 +146,30 @@ namespace HumanResourcesManager
         //            }
         //        }
         //        return true;
-        //    }       
+        //    }
         //}
 
+        //Sort version 2 - Merge Sort O(nlogn)
+        //
+        public static bool Sort(List<Worker> arr, int l, int r)
+        {
+            if (arr.Count == 0) { return false; }
+            if (l < r)
+            {
+                // Find the middle
+                // point
+                int m = l + (r - l) / 2;
+
+                // Sort first and
+                // second halves
+                Sort(arr, l, m);
+                Sort(arr, m + 1, r);
+
+                // Merge the sorted halves
+                merge(arr, l, m, r);
+            }
+            return true;
+        }
         public static void merge(List<Worker> arr, int l, int m, int r)
         {
             // Find sizes of two
@@ -201,29 +231,5 @@ namespace HumanResourcesManager
                 k++;
             }
         }
-
-        // Main function that
-        // sorts arr[l..r] using
-        // merge()
-        public static bool Sort(List<Worker> arr, int l, int r)
-        {
-            if(arr.Count == 0) { return false; }
-            if (l < r)
-            {
-                // Find the middle
-                // point
-                int m = l + (r - l) / 2;
-
-                // Sort first and
-                // second halves
-                Sort(arr, l, m);
-                Sort(arr, m + 1, r);
-
-                // Merge the sorted halves
-                merge(arr, l, m, r);
-            }
-            return true;
-        }
     }
-    
 }
