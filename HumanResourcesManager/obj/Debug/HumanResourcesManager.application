@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="HumanResourcesManager.exe.manifest" size="3534">
+    <dependentAssembly dependencyType="install" codebase="HumanResourcesManager.exe.manifest" size="3535">
       <assemblyIdentity name="HumanResourcesManager.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HciMWUrCBne/KYrXTbmHhFoGNM6+0Yn0NgO5+op3je8=</dsig:DigestValue>
+        <dsig:DigestValue>HOLPE5iMfnUXfWOpWmwH+Ghqka3zV0k1c6Uh6nOJc28=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

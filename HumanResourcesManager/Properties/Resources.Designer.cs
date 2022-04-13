@@ -61,6 +61,41 @@ namespace HumanResourcesManager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to àùãåã
+        ///áàø ùáò
+        ///àù÷ìåï
+        ///øäè
+        ///÷øééú âú
+        ///àéìú
+        ///ðúéáåú
+        ///ãéîåðä
+        ///àåô÷éí
+        ///ùãøåú
+        ///òøã
+        ///÷øééú îìàëé
+        ///éøåùìéí
+        ///áéú ùîù
+        ///øàùåï ìöéåï
+        ///ôúç ú÷ååä
+        ///ðúðéä
+        ///øçåáåú
+        ///ëôø ñáà
+        ///ìåã
+        ///øàù äòéï
+        ///éáðä
+        ///àìòã
+        ///úì àáéá
+        ///øîú âï
+        ///áú éí
+        ///÷øééú àåðå.
+        /// </summary>
+        internal static string cities {
+            get {
+                return ResourceManager.GetString("cities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap enhe {
@@ -81,6 +116,129 @@ namespace HumanResourcesManager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to à
+        ///á
+        ///â
+        ///ã
+        ///ä
+        ///å
+        ///æ
+        ///ç
+        ///è
+        ///é
+        ///ë
+        ///ì
+        ///î
+        ///ð
+        ///ñ
+        ///ò
+        ///ô
+        ///ö
+        ///÷
+        ///ø
+        ///ù
+        ///ú
+        ///ê
+        ///í
+        ///ï
+        ///ó
+        ///õ.
+        /// </summary>
+        internal static string hebrewletters {
+            get {
+                return ResourceManager.GetString("hebrewletters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ëäï
+        ///ìåé
+        ///îæøçé
+        ///ôøõ
+        ///áéèåï
+        ///ãäï
+        ///àáøäí
+        ///àâáàøéä
+        ///ôøéãîï
+        ///îìëä
+        ///àæåìàé
+        ///éåñó
+        ///îçàîéã
+        ///ëõ
+        ///â&apos;áàøéï
+        ///ãåã
+        ///òîø
+        ///çãã
+        ///àåçéåï
+        ///âáàé
+        ///ç&apos;èéá
+        ///áï ãåã
+        ///àãøé
+        ///÷ìééï
+        ///çï
+        ///ùôéøà
+        ///æåòáé
+        ///îçàâ&apos;ðä
+        ///èì
+        ///ìåéï
+        ///îùä
+        ///çæï
+        ///àåçðä
+        ///ñåàòã
+        ///âåìï
+        ///ñâì
+        ///àùëðæé
+        ///éöç÷
+        ///áø
+        ///éò÷á
+        ///îåø
+        ///ùìåí
+        ///àìéäå
+        ///ãééï
+        ///ñåéñä
+        ///ìáéà
+        ///àìáæ
+        ///ùîù
+        ///àèéàñ
+        ///áëø
+        ///ðçåí
+        ///ùèøï
+        ///ùøòáé
+        ///àìåï
+        ///øåæðáøâ
+        ///îîï
+        ///áï çîå
+        ///îéîåï
+        ///ùçø
+        ///å÷ðéï
+        ///ùùåï
+        ///òåáãéä
+        ///àñåìéï
+        ///ùåøõ
+        ///îàéø
+        ///åééñ
+        ///âøéðáøâ
+        ///çñï
+        ///àîñìí
+        ///âåìãùèééï
+        ///áøåê
+        ///èàäà
+        ///îñàøåä
+        ///òæøà
+        ///éôøç
+        ///ôìãîï
+        ///øåáéï
+        ///äøàì
+        ///ñìàîä
+        ///ñáâ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lastnames {
+            get {
+                return ResourceManager.GetString("lastnames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap missing_profile_photo {
@@ -91,12 +249,184 @@ namespace HumanResourcesManager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to àáé
+        ///àáéàåø
+        ///àáéàì
+        ///àáéá
+        ///àáéâãåø
+        ///àáéãåø
+        ///àáéãï
+        ///àáéä
+        ///àáéäå
+        ///àáéçé
+        ///àáéðåòí
+        ///àáéðø
+        ///àáéòã
+        ///àáéø
+        ///àáéùé
+        ///àáéúø
+        ///àáðø
+        ///àáøäí
+        ///àáùìåí
+        ///àâí
+        ///àãé
+        ///àãéø
+        ///àãí
+        ///àãø
+        ///àãøéàï
+        ///àäåã
+        ///àäøåï
+        ///àåãé
+        ///àåäã
+        ///àåìéáø
+        ///àåï
+        ///àåôéø
+        ///àåô÷
+        ///àåôøé
+        ///àåø
+        ///àåøàì
+        ///àåøåï
+        ///àåøé
+        ///àåøéàì
+        ///àåøéàï
+        ///àåøéä
+        ///àåøééï
+        ///àåøéï
+        ///àåøï
+        ///àåùé÷
+        ///àåùï
+        ///àåùø
+        ///àåùøé
+        ///àçéä
+        ///àçéùé
+        ///àéá
+        ///àéãå
+        ///àééì
+        ///àééìåï
+        ///àéìàé
+        ///àéìåï
+        ///àéìåø
+        ///àéìé
+        ///àéìéé
+        ///àéìï
+        ///àéìòàé
+        ///àéîøé
+        ///àéöé÷
+        ///àéúé
+        ///àéúéàì
+        ///àéúí
+        ///àéúîø
+        ///àéúï
+        ///àìàåø
+        ///àìàåøé
+        ///àìãã
+        ///àìãø
+        ///àìåï
+        ///àìçé
+        ///àìçðï
+        ///àìé
+        ///àìéàá
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string names {
+            get {
+                return ResourceManager.GetString("names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sort {
             get {
                 object obj = ResourceManager.GetObject("sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ìëéù
+        ///ìåçîéäâéèàåú
+        ///ìîøçá
+        ///îáöò÷ãù
+        ///îâã 
+        ///îâéãå 
+        ///îåãéòéï
+        ///îåøï
+        ///îåäìéáø
+        ///îåøéä
+        ///îñãä
+        ///îòééïçøåã
+        ///îöãä
+        ///îøâðéú
+        ///îøãëé
+        ///ðäøãòà
+        ///ðååä øòéí
+        ///ðåøãàå
+        ///ðåøéú
+        ///ðçì áùåø
+        ///ðçì òîåã
+        ///ðçì ÷ãøåï
+        ///ðçìùåø÷
+        ///ðçîéä
+        ///ðçùåï
+        ///ðèó
+        ///ðéì&quot;é
+        ///ðöðä
+        ///ðòîé
+        ///ñáéåï
+        ///ñåìã
+        ///ðúðéäå
+        ///ñáéåï
+        ///ñåìã
+        ///ñå÷åìåá
+        ///ñéâìéú
+        ///ñéðé
+        ///ñìò 
+        ///ñîãø
+        ///ñðä îùä
+        ///ñðåðéú
+        ///ñðù
+        ///òáãú
+        ///òâåø
+        ///òâðåï 
+        ///òæøà
+        ///òéïâãé
+        ///òìéä
+        ///òöîåï
+        ///òøåâåú
+        ///ôãåééí
+        ///ôé÷ø
+        ///ôåîôãéúà
+        ///ôøõ
+        ///öàìåï 
+        ///öáòåðé
+        ///öáø
+        ///öéøìñåï
+        ///öìó
+        ///öéôåøé
+        ///÷ãåùéñèøåîä
+        ///÷ãù
+        ///÷äéìúááì
+        ///÷äéìúåéìðä 
+        ///÷åîîéåú 
+        ///÷å÷ 
+        ///÷éùåï
+        ///÷øï äéñåã
+        ///äøàùåðéí
+        ///øáðåúí
+        ///øâáéí
+        ///øã&quot;÷
+        ///øåú 
+        ///øæéàì
+        ///øçì
+        ///øééðñ
+        ///øîá&quot;í
+        ///øî [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string streetnames {
+            get {
+                return ResourceManager.GetString("streetnames", resourceCulture);
             }
         }
     }
