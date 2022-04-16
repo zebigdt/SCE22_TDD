@@ -57,7 +57,7 @@ namespace HumanResourcesManager
 
         public static string GenerateSalary()
         {
-            return random.Next(3000, 50000).ToString();
+            return random.Next(3000, 50001).ToString();
         }
 
         public static string He_En(string he)

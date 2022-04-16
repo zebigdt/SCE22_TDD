@@ -83,9 +83,54 @@ namespace HumanResourcesManager.Tests
         public void CalculateIncomeTaxTest()
         {
             /* _Test version 0_ */
-            //int salary;
-            //int expectedIncomeTax;
-            //Assert.AreEqual(salary, expectedIncomeTax);
-        }
+            ////Arrange
+            //double salary = 3000;
+            //double expectedIncomeTax = 300;
+            ////Act
+            //double actualIncomeTax = salary * 0.10;
+            ////Assert
+            //Assert.AreEqual(actualIncomeTax, expectedIncomeTax);
+
+            /*_Test version 1_ */
+            ////Arrange
+            //double salary = 3000;
+            //double expectedIncomeTax = 300;
+            ////act
+            //double actualIncomeTax = Utility.CalculateIncomeTax(salary);
+            ////Assert
+            //Assert.AreEqual(expectedIncomeTax, actualIncomeTax);
+
+            /*_Test version 2_*/
+            //Arrange
+            double salary_10 = 3000;
+            double salary_14 = 6470;
+            double salary_20 = 9241;
+            double salary_31 = 14841;
+            double salary_35 = 20621;
+            double salary_47 = 50000;
+            double expectedIncomeTax_10 = 300;
+            double expectedIncomeTax_14 = 905.8;
+            double expectedIncomeTax_20 = 1848.2;
+            double expectedIncomeTax_31 = 4600.71;
+            double expectedIncomeTax_35 = 7217.35;
+            double expectedIncomeTax_47 = 23500;
+
+            //Act
+            double actualIncomeTax_10 = Math.Round(Utility.CalculateIncomeTax(salary_10), 2);
+            double actualIncomeTax_14 = Math.Round(Utility.CalculateIncomeTax(salary_14), 2);
+            double actualIncomeTax_20 = Math.Round(Utility.CalculateIncomeTax(salary_20), 2);
+            double actualIncomeTax_31 = Math.Round(Utility.CalculateIncomeTax(salary_31), 2);
+            double actualIncomeTax_35 = Math.Round(Utility.CalculateIncomeTax(salary_35), 2);
+            double actualIncomeTax_47 = Math.Round(Utility.CalculateIncomeTax(salary_47), 2);
+
+            //Assert
+            Assert.AreEqual(expectedIncomeTax_10, actualIncomeTax_10);
+            Assert.AreEqual(expectedIncomeTax_14, actualIncomeTax_14);
+            Assert.AreEqual(expectedIncomeTax_20, actualIncomeTax_20);
+            Assert.AreEqual(expectedIncomeTax_31, actualIncomeTax_31);
+            Assert.AreEqual(expectedIncomeTax_35, actualIncomeTax_35);
+            Assert.AreEqual(expectedIncomeTax_47, actualIncomeTax_47);
+        }   
+     
     }
 }
