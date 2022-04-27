@@ -16,7 +16,7 @@ namespace HumanResourcesManager
         private readonly static string[] cityNamesArray = Properties.Resources.citynames.Split().Where(x => !string.IsNullOrEmpty(x)).ToArray();
         private readonly static string[] streetNamesArray = Properties.Resources.streetnames.Split().Where(x => !string.IsNullOrEmpty(x)).ToArray();
         private readonly static string[] heArr = Properties.Resources.hebrewletters.Split().Where(x => !string.IsNullOrEmpty(x)).ToArray();
-        private readonly static string[] emailProviderArray = new string[] { "@walla.co.il", "@gmail.com", "@la-dod-moshe.co.il", "@sce.ac.il","@outlook.com" };
+        private readonly static string[] emailProviderArray = new string[] { "@walla.co.il", "@gmail.com", "@la-dod-moshe.co.il", "@sce.ac.il", "@outlook.com" };
         private readonly static string[,] he_en_letters = new string[,] { {heArr[0], "a"},{heArr[1], "b"},{heArr[2], "g"},{heArr[3], "d"},
                                                                 {heArr[4], "h"},{heArr[5], "v"},{heArr[6], "z"},{heArr[7], "h"},
                                                                 {heArr[8], "t"},{heArr[9], "y"},{heArr[10], "k"},{heArr[11], "l"},
@@ -58,7 +58,7 @@ namespace HumanResourcesManager
 
         public static string GenerateSalary()
         {
-            return random.Next(3000, 50001).ToString() +"."+ random.Next(100).ToString() ;
+            return random.Next(3000, 50000).ToString() + "." + random.Next(100).ToString();
         }
 
         public static string He_En(string he)
@@ -108,7 +108,7 @@ namespace HumanResourcesManager
             else if (salary >= 14841 && salary <= 20620) { salary *= 0.31; }
             else if (salary >= 20621 && salary <= 42910) { salary *= 0.35; }
             else { salary *= 0.47; }
-            return Math.Round(salary,2);
+            return Math.Round(salary, 2);
         }
 
         public static int CalculateTaxPercent(double sal, double netSal)
