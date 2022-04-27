@@ -37,7 +37,6 @@ namespace HumanResourcesManager
             this.phoneNum = phoneNum;
             this.address = address;
             this.salary = salary;
-            //כמה כסף נשאר לך אחרי שחלבו אותך 
             this.netSalary = (Double.Parse(salary) - Utility.CalculateIncomeTax(Double.Parse(salary))).ToString();
         }
         public Worker(Worker other)

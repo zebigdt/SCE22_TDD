@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HumanResourcesManager.exe" size="432056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HumanResourcesManager.exe" size="427960">
       <assemblyIdentity name="HumanResourcesManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zjHZKQ2yNgDHG6mz1w7mPwXEFRZxYf0yWyKpMezHtFc=</dsig:DigestValue>
+        <dsig:DigestValue>CUYgzZECwQijEC+puufhFz8nebSGeExbc30HICCh0Oc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

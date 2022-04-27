@@ -14,46 +14,46 @@ namespace HumanResourcesManager.Tests
         [TestMethod()]
         public void SortTest()
         {
-            /* _Test version 0_ */
-            //
-            //List<Worker> workers = new List<Worker>();
-            //for(int i = 0; i < 10; i++)
-            //{
-            //    workers.Add(new Worker());
-            //}
-            //for (int i = 0; i < 9; i++) 
-            //{ 
-            //    Assert.IsTrue(Int32.Parse(workers[i].getSalary())> Int32.Parse(workers[i + 1].getSalary()));
-            //}
+            /*//_Test version 0_
+            List<Worker> workers = new List<Worker>();
+            for(int i = 0; i < 10; i++)
+            {
+                workers.Add(new Worker());
+            }
+            for (int i = 0; i < 9; i++) 
+            { 
+                Assert.IsTrue(Int32.Parse(workers[i].getSalary())> Int32.Parse(workers[i + 1].getSalary()));
+            }
+            */
 
-            /* _Test version 1_ */
-            //
-            ////Arrange
-            //
-            //List<Worker> workers_empty = new List<Worker>;
-            //List<Worker> workers = new List<Worker>();
-            //Worker worker = new Worker();
-            //for (int i = 0; i < Utility.generator.Next(10,100); i++) 
-            //{
-            //    workers.Add(worker);
-            //}
-            //int workerListLength0 = workers.Count;
-            //
-            ////Act
-            //
-            //Utility.Sort(workers);
-            //
-            ////Assert
-            //
-            //for (int i = 0; i < workers.Count-2; i++) 
-            //{ 
-            //    Assert.IsTrue(Int32.Parse(workers[i].getSalary())<= Int32.Parse(workers[i + 1].getSalary()));
-            //}
-            //Assert.AreEqual(workerListLength0, workers.Count);
-            //Assert.IsFalse(Utility.Sort(workers_empty));
-            //Assert.IsTrue(Utility.Sort(workers));
+            /*// _Test version 1_ 
 
-            /* _Test version 2_*/
+            //Arrange
+            List<Worker> workers_empty = new List<Worker>;
+            List<Worker> workers = new List<Worker>();
+            Worker worker = new Worker();
+            for (int i = 0; i < Utility.generator.Next(10,100); i++) 
+            {
+                workers.Add(worker);
+            }
+            int workerListLength0 = workers.Count;
+            
+            //Act
+            
+            Utility.Sort(workers);
+            
+            //Assert
+            
+            for (int i = 0; i < workers.Count-2; i++) 
+            { 
+                Assert.IsTrue(Int32.Parse(workers[i].getSalary())<= Int32.Parse(workers[i + 1].getSalary()));
+            }
+            Assert.AreEqual(workerListLength0, workers.Count);
+            Assert.IsFalse(Utility.Sort(workers_empty));
+            Assert.IsTrue(Utility.Sort(workers));
+            */
+
+            /* _Test version 2 (final)_*/
             //
             //Arrange
 
@@ -72,7 +72,7 @@ namespace HumanResourcesManager.Tests
 
             for (int i = 0; i < workers.Count - 2; i++)
             {
-                Assert.IsTrue(Int32.Parse(workers[i].GetSalary()) <= Int32.Parse(workers[i + 1].GetSalary()));
+                Assert.IsTrue(Double.Parse(workers[i].GetSalary()) <= Double.Parse(workers[i + 1].GetSalary()));
             }
             Assert.AreEqual(workerListLength0, workers.Count);
             Assert.IsFalse(Utility.Sort(workers_empty, 0, workers_empty.Count - 1));
@@ -100,7 +100,7 @@ namespace HumanResourcesManager.Tests
             ////Assert
             //Assert.AreEqual(expectedIncomeTax, actualIncomeTax);
 
-            /*_Test version 2_*/
+            /*_Test version 2 (final)_*/
             //Arrange
             double salary_10 = 3000;
             double salary_14 = 6470;
