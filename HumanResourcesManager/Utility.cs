@@ -113,7 +113,7 @@ namespace HumanResourcesManager
 
         public static int CalculateTaxPercent(double sal, double netSal)
         {
-            return 100 * ((int)sal - (int)netSal) / (int)sal;
+            return (int)(100 * Math.Round((sal - netSal) / sal, 2));
         }
 
 
